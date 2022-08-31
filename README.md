@@ -4,9 +4,9 @@ Use snippets as command triggers.
 
 ## Configuration
 
-In `settings.json`
+The default does nothing, so create your own snippet in the `settings.json`.
 
-```json
+```jsonc
 "dippet.entry": {
   "javascript": [ // Language ID
     {
@@ -18,9 +18,13 @@ In `settings.json`
   ]
 }
 ```
-*The command `uuid.generate` in this example requires [UUID Generator](https://marketplace.visualstudio.com/items?itemName=netcorext.uuid-generator).
+*The command uuid.generate in this example requires [UUID Generator](https://marketplace.visualstudio.com/items?itemName=netcorext.uuid-generator).
 
-`Language ID` : The language of snippets applied. You can specify `"*"` to apply to all languages.
+### Scope
+
+`Language ID` : The language of snippets applied. You can specify "*" to apply to all languages.
+
+### Snippet
 
 - `prefix` : The trigger word for its snippet.
 
