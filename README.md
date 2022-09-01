@@ -12,8 +12,8 @@ The default does nothing, so create your own snippet in the `settings.json`.
     {
       "prefix": "uuid",
       "description": "Generate UUID",
-      "body": "",
-      "command": "uuid.generate"
+      "body": "", // Can be omitted as it is empty.
+      "command": ["uuid.generate", "cursorRight"]
     }
   ]
 }
@@ -32,7 +32,7 @@ The default does nothing, so create your own snippet in the `settings.json`.
 
 - `body` : Body of its snippet.
 
-- `command` : ID of the command to be executed when using its snippet.
+- `command` : ID of the command to be executed when using its snippet. You can use array to specify multiple commands.
 
 You can omit anything other than `prefix` that you do not need.
 
