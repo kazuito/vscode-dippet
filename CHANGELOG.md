@@ -7,6 +7,7 @@ All notable changes to the "Dippet" extension will be documented in this file.
 ## [Unreleased]
 
 - Support multiple commands.
+- Support to execute shell commands in the terminal.
 
 ## [0.1.0]
 

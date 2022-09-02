@@ -13,7 +13,7 @@ The default does nothing, so create your own snippet in the `settings.json`.
       "prefix": "uuid",
       "description": "Generate UUID",
       "body": "", // Can be omitted as it is empty.
-      "command": ["uuid.generate", "cursorRight"]
+      "command": ["cmd: uuid.generate", "cmd: cursorRight"]
     }
   ]
 }
@@ -32,7 +32,12 @@ The default does nothing, so create your own snippet in the `settings.json`.
 
 - `body` : Body of its snippet.
 
-- `command` : ID of the command to be executed when using its snippet. You can use array to specify multiple commands.
+- `command` : Tasks to be executed when using its snippet.
+
+  Command types
+
+  - `cmd` : ID of command. (e.g. `cmd: workbench.action.files.save`)
+  - `shell` : Shell command to be executed in the terminal. (e.g. `shell: echo Hello`)
 
 You can omit anything other than `prefix` that you do not need.
 
