@@ -16,10 +16,12 @@ export function activate(context: vscode.ExtensionContext) {
 
   context.subscriptions.push(
     vscode.workspace.onDidChangeConfiguration((e) => {
+      console.log(
+        disposableCompletionProviders.length,
+        disposableBundledCommands.length
+      );
       for (let i = 0; i < disposableCompletionProviders.length; i++) {
         disposableCompletionProviders[i].dispose();
-      }
-      for (let i = 0; i < disposableBundledCommands.length; i++) {
         disposableBundledCommands[i].dispose();
       }
       configuration = vscode.workspace.getConfiguration(extensionInfo.name);
@@ -48,10 +50,15 @@ function updateAll(
         context,
         commands
       );
-      disposableBundledCommands.push(disposableBundledCommand);
-      disposableCompletionProviders.push(
-        setCompletionItem(context, entryLang, entry, bundledCommandId)
+      let disposableCompletionProvider = setCompletionItem(
+        context,
+        entryLang,
+        entry,
+        bundledCommandId
       );
+
+      disposableBundledCommands.push(disposableBundledCommand);
+      disposableCompletionProviders.push(disposableCompletionProvider);
     }
   }
 }
